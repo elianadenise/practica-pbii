@@ -10,13 +10,11 @@ public class Temporario extends Empleado{
 	public Double calcularSueldo() {
 		if(this.cantidadDeHijos >= 0 && this.estaCasado) {
 			this.sueldoTotal = this.sueldoPorHora * this.cantidadDeHorasTrabajadas
-					+ this.cantidadDeHijos * this.salarioFamiliarPorHijo + this.salarioFamiliarPorParejaCasada;
-		} else if(this.cantidadDeHijos > 0 && !this.estaCasado) {
+					+ this.cantidadDeHijos * this.SALARIO_FAMILIAR_POR_HIJO + this.SALARIO_FAMILIAR_POR_CONYUGE;
+		} else if(this.cantidadDeHijos >= 0 && !this.estaCasado) {
 			this.sueldoTotal = this.sueldoPorHora * this.cantidadDeHorasTrabajadas
-					+ this.cantidadDeHijos * this.salarioFamiliarPorHijo;
-		} /*else if(this.cantidadDeHijos == 0 && !this.estaCasado){
-			this.sueldoTotal = this.sueldoPorHora * this.cantidadDeHorasTrabajadas;
-		}*/
+					+ this.cantidadDeHijos * this.SALARIO_FAMILIAR_POR_HIJO;
+		}
 		return this.sueldoTotal;
 	}
 }
