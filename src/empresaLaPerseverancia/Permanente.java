@@ -13,10 +13,10 @@ public class Permanente extends Empleado{
 	}
 	
 	public Double calcularSueldo() {
-		if(this.cantidadDeHijos >= 0 && this.estaCasado) {
+		if(this.estaCasado) {
 			this.sueldoTotal = this.sueldoPorHora * this.cantidadDeHorasTrabajadas + this.sueldoPorAntiguedad * this.antiguedad 
 					+ this.cantidadDeHijos * this.SALARIO_FAMILIAR_POR_HIJO + this.SALARIO_FAMILIAR_POR_CONYUGE;
-		} else if(this.cantidadDeHijos >= 0 && !this.estaCasado) {
+		} else if(!this.estaCasado) {
 			this.sueldoTotal = this.sueldoPorHora * this.cantidadDeHorasTrabajadas + this.sueldoPorAntiguedad * this.antiguedad 
 					+ this.cantidadDeHijos * this.SALARIO_FAMILIAR_POR_HIJO;
 		}
